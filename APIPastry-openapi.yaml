@@ -29,7 +29,7 @@ paths:
                 pastries_json:
                   value:
                   - name: Baba Rhum
-                    description: Delicieux Baba au Rhum pas calorique du tout 12345
+                    description: Delicieux Baba au Rhum pas calorique du tout 1234567567пр
                     size: L
                     price: 3.2
                     status: available
