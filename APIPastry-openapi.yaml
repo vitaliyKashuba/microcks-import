@@ -14,8 +14,18 @@ paths:
   /pastry:
     summary: Global operations on pastries
     get:
-      tags:
-        - pastry
+      parameters:
+        - examples:
+            pastries_json1:
+              value: pastries_json1
+            pastries_json2:
+              value: pastries_json2
+          name: name
+          description: pastry name
+          schema:
+            type: string
+          in: query
+          required: true
       responses:
         "200":
           content:
@@ -25,7 +35,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Pastry'
               examples:
-                pastries_json:
+                pastries_json1:
                   value:
                     - name: Baba Rhum
                       description: Delicieux Baba au Rhum pas calorique du tout 1234567567пр
@@ -41,6 +51,18 @@ paths:
                       description: Delicieuse Tartelette aux Fraises fraiches
                       size: S
                       price: 2
+                      status: available
+                pastries_json2:
+                  value:
+                    - name: Baba Rhum
+                      description: gdgdfgdfg
+                      size: L
+                      price: 3.2
+                      status: available
+                    - name: Divorces
+                      description: Dgsdgrstrystout
+                      size: M
+                      price: 2.8
                       status: available
           description: Get list of pastries
       operationId: GetPastries
